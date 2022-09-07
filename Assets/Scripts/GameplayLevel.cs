@@ -9,11 +9,13 @@ public class GameplayLevel : MonoBehaviour
     private QuestionData questionData;
     [SerializeField] private QuestionScriptable questionScriptable;
     [SerializeField] private List<QuestionData> questionDataList;
+    [SerializeField] private int selectedIndexLevel;
     private int _amountAnswer = 4;
 
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private string correctAnswer;
     [SerializeField] private Image hintImage;
+
     [SerializeField] private List<AnswerObject> answerObjectsList = new List<AnswerObject>();
 
     [SerializeField] private AnswerObject answerPrefab;
@@ -23,7 +25,7 @@ public class GameplayLevel : MonoBehaviour
     {
         questionDataList = questionScriptable.questionData;
 
-        questionData = questionDataList[0];
+        questionData = questionDataList[selectedIndexLevel];
     }
 
     private void Start()
